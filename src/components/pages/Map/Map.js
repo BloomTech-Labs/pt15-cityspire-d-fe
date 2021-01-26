@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import './Map.css';
 
@@ -17,6 +19,17 @@ function Map() {
     });
 
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+      })
+    );
+
+    // navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
+    //   enableHighAccuracy: true,
+    // });
 
     return () => map.remove();
   }, []);
