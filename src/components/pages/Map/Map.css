@@ -1,12 +1,3 @@
-html {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  overflow: hidden;
-}
-
 .map-container {
   position: absolute;
   top: 0;
