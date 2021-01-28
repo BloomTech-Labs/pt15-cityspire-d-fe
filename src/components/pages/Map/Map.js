@@ -23,6 +23,7 @@ function Map() {
     map.addControl(
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
+        countries: 'us',
         mapboxgl: mapboxgl,
       })
     );
