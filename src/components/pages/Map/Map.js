@@ -20,13 +20,21 @@ function Map() {
 
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
-    map.addControl(
-      new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        countries: 'us',
-        mapboxgl: mapboxgl,
-      })
-    );
+    const geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      countries: 'us',
+      mapboxgl: mapboxgl,
+    });
+
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+    // map.addControl(
+    //   new MapboxGeocoder({
+    //     accessToken: mapboxgl.accessToken,
+    //     countries: 'us',
+    //     mapboxgl: mapboxgl,
+    //   })
+    // );
 
     // navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
     //   enableHighAccuracy: true,
@@ -37,6 +45,7 @@ function Map() {
 
   return (
     <>
+      <div id="geocoder" class="geocoder"></div>
       <div className="map-container" ref={mapContainerRef} />
     </>
   );
