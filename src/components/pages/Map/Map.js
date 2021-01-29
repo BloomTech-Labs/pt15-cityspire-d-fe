@@ -45,7 +45,7 @@ function Map() {
 
   return (
     <>
-      <div id="geocoder" class="geocoder"></div>
+      <div id="geocoder" className="geocoder"></div>
       <div className="map-container" ref={mapContainerRef} />
     </>
   );
