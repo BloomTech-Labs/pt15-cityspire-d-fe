@@ -17,6 +17,29 @@
     margin: 0 15px;
 }
 
+.user {
+    display: none;
+    position: absolute;
+    padding: 5px 5px;
+    right: 3;
+}
+
+.users:hover .user{
+    display: block;
+}
+
+
+.heart {
+    display: none;
+    position: absolute;
+    padding: 5px 5px;
+    right: 5px;
+}
+
+.favorites:hover .heart{
+    display: block;
+}
+
 .container {
     margin-top: 50px;
 }
