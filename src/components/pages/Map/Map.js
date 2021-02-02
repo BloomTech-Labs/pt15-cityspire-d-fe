@@ -28,18 +28,6 @@ function Map() {
 
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
-    // map.addControl(
-    //   new MapboxGeocoder({
-    //     accessToken: mapboxgl.accessToken,
-    //     countries: 'us',
-    //     mapboxgl: mapboxgl,
-    //   })
-    // );
-
-    // navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
-    //   enableHighAccuracy: true,
-    // });
-
     return () => map.remove();
   }, []);
 
