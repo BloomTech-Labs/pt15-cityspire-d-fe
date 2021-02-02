@@ -1,14 +1,24 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
-import { Button } from '../../common';
+import {
+  FaAccessibleIcon,
+  FAAccessibleIcon,
+  FaHeart,
+  FaUserCircle,
+} from 'react-icons/fa';
 
 function NavBar(props) {
   return (
     <div>
       <h1>CitySpire</h1>
       <div>
-        <Link to="/user"></Link>
-        <Link to="/favorites"></Link>
+        <Link to="/profile-list">
+          <FaUserCircle size="30px" />
+        </Link>
+        <Link to="/example-list">
+          <FaHeart size="30px" />
+        </Link>
       </div>
     </div>
   );
