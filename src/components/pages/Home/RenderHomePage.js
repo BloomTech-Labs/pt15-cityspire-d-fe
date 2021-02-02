@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../../common';
 import NavBar from '../Nav/navBar.js';
+import '../Nav/navCSS.css';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
   return (
     <div>
       <NavBar />
-      <h1>Hi {userInfo.name} Welcome to Labs Basic SPA</h1>
+      <h1 class="container">Hi {userInfo.name} Welcome to Labs Basic SPA</h1>
       <div>
         <p>
           This is an example of a common example of how we'd like for you to

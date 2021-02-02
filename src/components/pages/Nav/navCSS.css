@@ -1,0 +1,22 @@
+.navBar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navLinks {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+    margin: 0 15px;
+}
+
+.container {
+    margin-top: 50px;
+}

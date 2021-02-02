@@ -1,18 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
-import {
-  FaAccessibleIcon,
-  FAAccessibleIcon,
-  FaHeart,
-  FaUserCircle,
-} from 'react-icons/fa';
+import { FaHeart, FaUserCircle } from 'react-icons/fa';
+import './navCSS.css';
 
 function NavBar(props) {
   return (
-    <div>
-      <h1>CitySpire</h1>
-      <div>
+    <div class="navBar">
+      <Link to="/">
+        <h1>CitySpire</h1>
+      </Link>
+      <div class="navLinks">
         <Link to="/profile-list">
           <FaUserCircle size="30px" />
         </Link>
