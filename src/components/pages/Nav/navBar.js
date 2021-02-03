@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart, FaUserCircle } from 'react-icons/fa';
-import './navCSS.css';
 
 function NavBar(props) {
   return (
