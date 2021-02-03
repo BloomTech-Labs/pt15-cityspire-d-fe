@@ -5,8 +5,9 @@
   align-items: center;
   position: fixed;
   top: 0;
-  background: #fff;
+  background: #fafafa;
   width: 100%;
+  height: 75px;
   z-index: 2;
 }
 
@@ -23,7 +24,6 @@
   display: none;
   position: absolute;
   padding: 5px 5px;
-  right: 3;
 }
 
 .users:hover .user {
@@ -39,9 +39,4 @@
 
 .favorites:hover .heart {
   display: block;
-}
-
-#root {
-  margin-top: 75px;
-  margin-bottom: -75px;
 }
