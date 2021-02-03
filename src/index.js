@@ -20,6 +20,8 @@ import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
 import NavBar from '../src/components/pages/Nav/navBar';
 
+import '../Nav/navCSS.css';
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>
