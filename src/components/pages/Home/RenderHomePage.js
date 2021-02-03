@@ -9,6 +9,7 @@ import Map from '../Map/Map';
 function RenderHomePage() {
   return (
     <>
+      <NavBar />
       <Map />
     </>
   );
