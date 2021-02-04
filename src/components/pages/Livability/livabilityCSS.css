@@ -1,0 +1,26 @@
+.livabilityBox {
+    border: 1px solid red;
+    width: 300px;
+    height: 300px;
+    margin-left: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mainScore {
+    border: 1px solid blue;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    margin: 0;
+}
+
+.subScores {
+    border: 1px solid yellow;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
