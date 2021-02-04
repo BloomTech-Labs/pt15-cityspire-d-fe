@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import LivabilityLandingPage from '../Livability/LivabilityLandingPage';
 
 const RenderProfileListPage = props => (
   <div>
@@ -15,6 +16,7 @@ const RenderProfileListPage = props => (
         </figcaption>
       </figure>
     ))}
+    <LivabilityLandingPage />
   </div>
 );
 
