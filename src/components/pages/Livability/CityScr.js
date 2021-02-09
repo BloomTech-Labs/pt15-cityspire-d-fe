@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import './livabilityCSS.css';
 
 function CityScr() {
-  const [city_scr, setcity_scr] = useState({});
+  const [cityScr, setCityScr] = useState({});
 
   useEffect(() => {
     axios
       .get('https://cityspire.dananderson.dev/city_scr/Seattle')
       .then(res => {
-        setcity_scr(res.data);
+        setCityScr(res.data);
         console.log('aw: CityScr.js: axios: city_scr: ', res.data);
       })
       .catch(err => {
@@ -25,8 +25,8 @@ function CityScr() {
     <div className="mainScore">
       <h1>City Name</h1>
       <div className="subScores">
-        <h4>{city_scr.msg}</h4>
-        <p>{city_scr.score}</p>
+        <h4>{cityScr.msg}</h4>
+        <p>{cityScr.score}</p>
       </div>
     </div>
   );

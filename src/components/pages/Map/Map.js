@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-
 import './Map.css';
+import LivabilityLandingPage from '../Livability/LivabilityLandingPage';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -35,6 +35,7 @@ function Map() {
     <>
       <div id="geocoder" className="geocoder"></div>
       <div className="map-container" ref={mapContainerRef} />
+      <LivabilityLandingPage />
     </>
   );
 }

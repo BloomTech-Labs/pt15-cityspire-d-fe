@@ -1,12 +1,18 @@
 .livabilityBox {
-    border: 1px solid red;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px gray;
     width: 300px;
     height: 300px;
     margin-left: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 5;
+    background-color: lightgray;
 }
 
 .mainScore {
