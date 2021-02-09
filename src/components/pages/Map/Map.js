@@ -31,11 +31,13 @@ function Map() {
     return () => map.remove();
   }, []);
 
+  const cityClicked = true;
+
   return (
     <>
       <div id="geocoder" className="geocoder"></div>
       <div className="map-container" ref={mapContainerRef} />
-      <LivabilityLandingPage />
+      {cityClicked && <LivabilityLandingPage />}
     </>
   );
 }
