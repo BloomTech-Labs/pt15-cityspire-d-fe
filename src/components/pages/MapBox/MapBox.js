@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
@@ -9,6 +9,8 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 function MapBox() {
   const mapContainerRef = useRef(null);
+  const [location, setLocation] = useState('');
+  console.log('location', location);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -26,8 +28,14 @@ function MapBox() {
       mapboxgl: mapboxgl,
     });
 
+    geocoder.on('result', function(result) {
+      console.log(result);
+      setLocation(result.result.text);
+    });
+
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
     map.resize();
+
     return () => map.remove();
   }, []);
 

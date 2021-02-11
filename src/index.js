@@ -18,12 +18,11 @@ import { LoginPage } from './components/pages/Login';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
+import { LandingPage } from './components/pages/Landing';
 import MapBox from './components/pages/MapBox/MapBox';
 import NavBar from '../src/components/pages/Nav/navBar';
-import RenderLandingPage from './components/pages/Landing/RenderLandingPage';
 
 import './index.css';
-import './components/pages/Nav/navCSS.css';
 
 ReactDOM.render(
   <Router>
@@ -49,7 +48,7 @@ function App() {
     <Security {...config} onAuthRequired={authHandler}>
       <NavBar />
       <Switch>
-        <Route path="/" exact component={RenderLandingPage} />
+        <Route path="/" exact component={LandingPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/map" component={MapBox} />
