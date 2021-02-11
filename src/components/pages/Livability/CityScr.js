@@ -1,9 +1,13 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './livabilityCSS.css';
+import { LocationContext } from '../context/Locationcontext.js';
 
 function CityScr() {
   const [cityScr, setCityScr] = useState([]);
+  const [cityName, setCityName] = useState({});
+  const location = useContext(LocationContext);
+  console.log('aw: CityScr.js: locationContext: ', location);
 
   useEffect(() => {
     axios
@@ -21,10 +25,32 @@ function CityScr() {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/seattle.json?access_token=pk.eyJ1IjoiY2l0eXNwaXJlZCIsImEiOiJja2tkcngzaHIwMHd3MnhsbWM0eHhibWtjIn0.FnQxPRtk2XQLf79gI3PFsw`
+      )
+      // .get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${city_name}.json?access_token=pk.eyJ1IjoiY2l0eXNwaXJlZCIsImEiOiJja2tkcngzaHIwMHd3MnhsbWM0eHhibWtjIn0.FnQxPRtk2XQLf79gI3PFsw`)
+      .then(res => {
+        setCityName(res.data);
+        console.log('aw: CityScr.js: setCityName: ', res.data.features); //.[0].geometry.coordinates)
+      })
+      .catch(err => {
+        console.log(
+          'aw: CityScr.js: axios: city_scr: ',
+          err.message,
+          err.response
+        );
+      });
+  }, []);
+
+  // console.log("aw: CitySrc.js: location: ", location)
+
   return (
     <div className="mainScore">
       <h1>City Name</h1>
       <div className="subScores">
+        {/* <p>{cityName.features}</p> */}
         {cityScr.map(cityScrs => (
           <div key={cityScrs.id}>
             <div>
