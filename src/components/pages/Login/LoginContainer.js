@@ -46,9 +46,7 @@ const LoginContainer = () => {
       }
     );
 
-    return () => {
-      widget.remove();
-    };
+    return () => widget.remove();
   }, []);
 
   return <div id="sign-in-widget" />;
