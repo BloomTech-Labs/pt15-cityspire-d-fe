@@ -40,14 +40,12 @@ function Mapbox() {
     return () => map.remove();
   }, []);
 
-  const cityClicked = true;
-
   return (
     <div>
       <LocationContext.Provider value={location}>
         <div id="geocoder" className="geocoder"></div>
         <div className="map-container" ref={mapContainerRef} />
-        {cityClicked && <LivabilityLandingPage />}
+        <LivabilityLandingPage />
       </LocationContext.Provider>
     </div>
   );

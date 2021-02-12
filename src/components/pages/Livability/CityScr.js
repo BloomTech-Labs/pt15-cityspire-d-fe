@@ -5,7 +5,6 @@ import { LocationContext } from '../context/Locationcontext.js';
 
 function CityScr() {
   const [cityScr, setCityScr] = useState([]);
-  const [cityName, setCityName] = useState({});
   const location = useContext(LocationContext);
   console.log('aw: CityScr.js: locationContext: ', location);
 
@@ -25,57 +24,41 @@ function CityScr() {
       });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://api.mapbox.com/geocoding/v5/mapbox.places/seattle.json?access_token=pk.eyJ1IjoiY2l0eXNwaXJlZCIsImEiOiJja2tkcngzaHIwMHd3MnhsbWM0eHhibWtjIn0.FnQxPRtk2XQLf79gI3PFsw`
-      )
-      // .get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${city_name}.json?access_token=pk.eyJ1IjoiY2l0eXNwaXJlZCIsImEiOiJja2tkcngzaHIwMHd3MnhsbWM0eHhibWtjIn0.FnQxPRtk2XQLf79gI3PFsw`)
-      .then(res => {
-        setCityName(res.data);
-        console.log('aw: CityScr.js: setCityName: ', res.data.features); //.[0].geometry.coordinates)
-      })
-      .catch(err => {
-        console.log(
-          'aw: CityScr.js: axios: city_scr: ',
-          err.message,
-          err.response
-        );
-      });
-  }, []);
-
-  // console.log("aw: CitySrc.js: location: ", location)
-
   return (
-    <div className="mainScore">
-      <h1>City Name</h1>
-      <div className="subScores">
-        {/* <p>{cityName.features}</p> */}
-        {cityScr.map(cityScrs => (
-          <div key={cityScrs.id}>
-            <div>
-              <h4>Crime</h4>
-              <p>{cityScrs.crime_data}</p>
-            </div>
-            <div>
-              <h4>Population</h4>
-              <p>{cityScrs.population}</p>
-            </div>
-            <div>
-              <h4>Cost of Living</h4>
-              <p>{cityScrs.cost_of_living}</p>
-            </div>
-            <div>
-              <h4>Rental Rates</h4>
-              <p>{cityScrs.rental_rates}</p>
-            </div>
-            <div>
-              <h4>Walk Rate</h4>
-              <p>{cityScrs.walk_score}</p>
-            </div>
+    <div>
+      {cityScr === 404 ? (
+        <div></div>
+      ) : (
+        <div className="mainScore">
+          <h1>City Name</h1>
+          <div className="subScores">
+            {cityScr.map(cityScrs => (
+              <div key={cityScrs.id}>
+                <div>
+                  <h4>Crime</h4>
+                  <p>{cityScrs.crime_data}</p>
+                </div>
+                <div>
+                  <h4>Population</h4>
+                  <p>{cityScrs.population}</p>
+                </div>
+                <div>
+                  <h4>Cost of Living</h4>
+                  <p>{cityScrs.cost_of_living}</p>
+                </div>
+                <div>
+                  <h4>Rental Rates</h4>
+                  <p>{cityScrs.rental_rates}</p>
+                </div>
+                <div>
+                  <h4>Walk Rate</h4>
+                  <p>{cityScrs.walk_score}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
