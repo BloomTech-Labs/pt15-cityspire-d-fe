@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect, useContext } from 'react';
 import './livabilityCSS.css';
 import { LocationContext } from '../context/Locationcontext.js';
+import { FaHeart } from 'react-icons/fa';
 
 function CityScr() {
   const [cityScr, setCityScr] = useState([]);
@@ -30,7 +31,10 @@ function CityScr() {
         <div></div>
       ) : (
         <div className="mainScore">
-          <h1>City Name</h1>
+          <div className="subScores">
+            <h1>{location}</h1>
+            <FaHeart size="30px" color="red" />
+          </div>
           <div className="subScores">
             {cityScr.map(cityScrs => (
               <div key={cityScrs.id}>
