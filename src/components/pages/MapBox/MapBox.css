@@ -1,14 +1,14 @@
 .map-container {
-  margin-top: 75px;
   position: absolute;
-  top: 0;
+  top: 80px;
   bottom: 0;
   width: 100%;
+  overflow: hidden;
 }
 
 .geocoder {
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  z-index: 2;
   width: 50%;
   left: 50%;
   margin-left: -25%;
