@@ -11,10 +11,7 @@ function CityScr() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://cityspire-d-be.herokuapp.com/locations
-      `
-      )
+      .get(`https://cityspire-d-be.herokuapp.com/locations`)
       .then(res => {
         setCityScr(res.data);
         console.log('aw: CityScr.js: axios: city_scr: ', res.data);
@@ -29,6 +26,10 @@ function CityScr() {
       });
   }, []);
 
+  const favorite = () => {
+    axios.put(``).then(res => {});
+  };
+
   return (
     <div>
       {cityScr === null ? (
@@ -37,7 +38,7 @@ function CityScr() {
         <div className="livabilityBox">
           <div className="mainScore">
             <h1>{location}</h1>
-            <FaHeart size="30px" color="red" />
+            <FaHeart size="30px" color="red" onClick={favorite} />
           </div>
           <div className="subScores">
             {cityScr.map(cityScrs => (
