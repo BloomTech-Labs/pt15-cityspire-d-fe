@@ -2,13 +2,12 @@ import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import './Map.css';
-import LivabilityLandingPage from '../Livability/LivabilityLandingPage';
-import { LocationContext } from '../context/Locationcontext';
+
+import './MapBox.css';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
-function Mapbox() {
+function MapBox() {
   const mapContainerRef = useRef(null);
   const [location, setLocation] = useState('');
   console.log('location', location);
@@ -41,14 +40,10 @@ function Mapbox() {
   }, []);
 
   return (
-    <div>
-      <LocationContext.Provider value={location}>
-        <div id="geocoder" className="geocoder"></div>
-        <div className="map-container" ref={mapContainerRef} />
-        <LivabilityLandingPage />
-      </LocationContext.Provider>
-    </div>
+    <>
+      <div id="geocoder" className="geocoder"></div>
+      <div className="map-container" ref={mapContainerRef} />
+    </>
   );
 }
-
-export default Mapbox;
+export default MapBox;
