@@ -18,7 +18,8 @@
 .mainScore {
     border: 1px solid blue;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+    justify-content: space-between;
     width: 100%;
     margin: 0;
 }

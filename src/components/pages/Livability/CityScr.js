@@ -11,7 +11,10 @@ function CityScr() {
 
   useEffect(() => {
     axios
-      .get(`https://cityspire-d-be.herokuapp.com/locations`)
+      .get(
+        `https://cityspire-d-be.herokuapp.com/locations
+      `
+      )
       .then(res => {
         setCityScr(res.data);
         console.log('aw: CityScr.js: axios: city_scr: ', res.data);
@@ -22,16 +25,17 @@ function CityScr() {
           err.message,
           err.response
         );
+        setCityScr(null);
       });
   }, []);
 
   return (
     <div>
-      {cityScr === 404 ? (
+      {cityScr === null ? (
         <div></div>
       ) : (
-        <div className="mainScore">
-          <div className="subScores">
+        <div className="livabilityBox">
+          <div className="mainScore">
             <h1>{location}</h1>
             <FaHeart size="30px" color="red" />
           </div>

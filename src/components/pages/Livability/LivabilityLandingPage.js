@@ -4,7 +4,7 @@ import './livabilityCSS.css';
 
 function LivabilityLandingPage() {
   return (
-    <div className="livabilityBox">
+    <div>
       <CityScr />
     </div>
   );
