@@ -6,6 +6,7 @@ import { FaHeart } from 'react-icons/fa';
 
 function CityScr() {
   const [cityScr, setCityScr] = useState([]);
+  const [favorites, setFavorites] = useState([]);
   const location = useContext(LocationContext);
   console.log('aw: CityScr.js: locationContext: ', location);
 
@@ -17,17 +18,35 @@ function CityScr() {
       )
       .then(res => {
         setCityScr(res.data);
-        console.log('aw: CityScr.js: axios: city_scr: ', res.data);
+        console.log('aw: CityScr.js: .get: setCityScr: ', res.data);
       })
       .catch(err => {
         console.log(
-          'aw: CityScr.js: axios: city_scr: ',
+          'aw: CityScr.js: .get: city_scr: ',
           err.message,
           err.response
         );
         setCityScr(null);
       });
   }, []);
+
+  const favorite = e => {
+    e.preventDefault();
+    console.log('aw: CityScr.js: .put: Test', location);
+    // axios
+    //   .put(``)
+    //   .then(res => {
+    //     setFavorites(res.data)
+    //     console.log('aw: CityScr.js: .put: favorite: ', res.data)
+    //   })
+    //   .catch(err => {
+    //     console.log(
+    //       'aw: CityScr.js: .put: favorite: ',
+    //       err.message,
+    //       err.response
+    //     );
+    //   })
+  };
 
   return (
     <div>
@@ -37,7 +56,9 @@ function CityScr() {
         <div className="livabilityBox">
           <div className="mainScore">
             <h1>{location}</h1>
-            <FaHeart size="30px" color="red" />
+            <button className="button" onClick={favorite}>
+              <FaHeart size="30px" color="red" />
+            </button>
           </div>
           <div className="subScores">
             {cityScr.map(cityScrs => (
