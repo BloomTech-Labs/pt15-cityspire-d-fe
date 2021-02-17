@@ -1,0 +1,42 @@
+.navBar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background: #fafafa;
+  width: 100%;
+  height: 75px;
+  z-index: 2;
+}
+
+.navLinks {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+  margin: 0 15px;
+}
+
+.user {
+  display: none;
+  position: absolute;
+  padding: 5px 5px;
+}
+
+.users:hover .user {
+  display: block;
+}
+
+.heart {
+  display: none;
+  position: absolute;
+  padding: 5px 5px;
+  right: 5px;
+}
+
+.favorites:hover .heart {
+  display: block;
+}
