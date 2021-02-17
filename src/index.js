@@ -19,10 +19,10 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
 import { LandingPage } from './components/pages/Landing';
-import MapBox from './components/pages/MapBox/MapBox';
-import NavBar from '../src/components/pages/Nav/navBar';
+import { Mapbox } from './components/pages/Mapbox';
+import { NavBar } from './components/layout/NavBar';
 
-import './index.css';
+import './styles/index.css';
 
 ReactDOM.render(
   <Router>
@@ -51,8 +51,8 @@ function App() {
         <Route path="/" exact component={LandingPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
-        <Route path="/map" component={MapBox} />
-        {/* any of the routes you need secured should be registered as SecureRoutes */}
+        <Route path="/map" component={Mapbox} />
+
         <SecureRoute
           path="/home"
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
