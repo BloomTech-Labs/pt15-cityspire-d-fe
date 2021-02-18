@@ -21,10 +21,9 @@ import { LoadingComponent } from './components/common';
 import { LandingPage } from './components/pages/Landing';
 import MapBox from './components/pages/MapBox/MapBox';
 import NavBar from '../src/components/pages/Nav/navBar';
-import Favorites from './components/pages/Favorite/FavoriteContainer.js';
+import FavoritesContainer from './components/pages/Favorite/FavoriteContainer.js';
 
 import './index.css';
-import FavoritesContainer from './components/pages/Favorite/FavoriteContainer.js';
 
 ReactDOM.render(
   <Router>

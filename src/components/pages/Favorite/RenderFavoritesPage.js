@@ -3,10 +3,27 @@ import React, { useEffect, useState } from 'react';
 
 function RenderFavoritesPage() {
   const [favorite, setFavorite] = useState([]);
+  const [userId, setUserId] = useState([]);
 
   useEffect(() => {
     axios
-      .get(``)
+      .get(`https://cityspire-d-be.herokuapp.com/userlocations`)
+      .then(res => {
+        setUserId(res.data);
+        console.log('aw: RenderFavoritesPage.js: .get: userID', res.data);
+      })
+      .catch(err => {
+        console.log(
+          'aw: RenderFavoritesPage.js: .get: userID: ',
+          err.message,
+          err.response
+        );
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`https://cityspire-d-be.herokuapp.com/userlocations/${userId}`)
       .then(res => {
         setFavorite(res.data);
         console.log(
@@ -21,8 +38,17 @@ function RenderFavoritesPage() {
           err.response
         );
       });
-  });
-  return <div>Test</div>;
+  }, []);
+
+  return (
+    <div>
+      {favorite.map(userLoc => (
+        <div key={userLoc.id}>
+          <h2>{userLoc.name}</h2>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default RenderFavoritesPage;

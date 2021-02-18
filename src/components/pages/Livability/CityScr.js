@@ -6,7 +6,7 @@ import { FaHeart } from 'react-icons/fa';
 
 function CityScr() {
   const [cityScr, setCityScr] = useState([]);
-  const [favorites, setFavorites] = useState([]);
+  // const [favorites, setFavorites] = useState([]);
   const location = useContext(LocationContext);
   console.log('aw: CityScr.js: locationContext: ', location);
 
@@ -34,7 +34,7 @@ function CityScr() {
     e.preventDefault();
     console.log('aw: CityScr.js: .put: Test', location);
     // axios
-    //   .put(``)
+    //   .post(``)
     //   .then(res => {
     //     setFavorites(res.data)
     //     console.log('aw: CityScr.js: .put: favorite: ', res.data)
