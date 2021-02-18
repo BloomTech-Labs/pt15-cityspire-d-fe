@@ -21,8 +21,10 @@ import { LoadingComponent } from './components/common';
 import { LandingPage } from './components/pages/Landing';
 import MapBox from './components/pages/MapBox/MapBox';
 import NavBar from '../src/components/pages/Nav/navBar';
+import Favorites from './components/pages/Favorite/FavoriteContainer.js';
 
 import './index.css';
+import FavoritesContainer from './components/pages/Favorite/FavoriteContainer.js';
 
 ReactDOM.render(
   <Router>
@@ -58,6 +60,7 @@ function App() {
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
         <SecureRoute path="/example-list" component={ExampleListPage} />
+        <SecureRoute path="/favorites" component={FavoritesContainer} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
         <Route component={NotFoundPage} />
