@@ -21,7 +21,7 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { LandingPage } from './components/pages/Landing';
 import { Mapbox } from './components/pages/Mapbox';
 import { LoadingComponent } from './components/common';
-import { NavBar } from './components/layout/Nav';
+import { Navbar } from './components/layout/Nav';
 
 import './styles/index.css';
 
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      <NavBar />
+      <Navbar />
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/login" component={LoginPage} />

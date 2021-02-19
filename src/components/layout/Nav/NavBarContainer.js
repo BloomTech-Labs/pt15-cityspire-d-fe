@@ -1,16 +1,16 @@
 import React from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
-import RenderNavBar from './RenderNavBar';
-import './NavBarContainer.css';
+import RenderNavbar from './RenderNavBar';
+import './NavbarContainer.css';
 
-function NavBar() {
+function Navbar() {
   const { authState, authService } = useOktaAuth();
   console.log('useOktaAuth', useOktaAuth);
 
   return (
     <>
-      <RenderNavBar
+      <RenderNavbar
         // userInfo={userInfo}
         authService={authService}
         authState={authState}
@@ -22,4 +22,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;
