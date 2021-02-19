@@ -6,7 +6,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import RenderMapbox from './RenderMapbox';
 import { LocationContext } from '../../../state';
 
-import './MapBox.css';
+import './Mapbox.css';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 

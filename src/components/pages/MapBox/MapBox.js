@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import './MapBox.css';
+import './Mapbox.css';
 import LivabilityLandingPage from '../Livability/LivabilityLandingPage';
 import { LocationContext } from '../context/Locationcontext';
 

@@ -8,7 +8,7 @@ import { Button } from '../../common';
 
 import './RenderLandingPage.css';
 
-function RenderLandingPage(props) {
+function RenderLandingPage() {
   return (
     <>
       <div className="search-city-container">

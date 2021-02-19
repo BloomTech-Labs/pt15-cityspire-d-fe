@@ -5,6 +5,7 @@ import citySpire from '../../../images/cityspire.svg';
 
 function RenderNavBar(props) {
   const { authService, authState } = props;
+  const logout = async () => authService.logout();
 
   return (
     <nav>
@@ -13,21 +14,19 @@ function RenderNavBar(props) {
       </Link>
 
       <div className="button-container">
-        {!authState.isAuthenticated && (
-          <>
-            <Link to="/login">
-              <button>login</button>
-            </Link>
-
-            <Link to="#">
-              <button>Sign Up</button>
-            </Link>
-          </>
+        {!authState.isPending && !authState.isAuthenticated && (
+          <Link to="/login">
+            <button>login</button>
+          </Link>
         )}
 
-        {authState.isAuthenticated && (
-          <button onClick={() => authService.logout()}>Logout</button>
+        {!authState.isPending && !authState.isAuthenticated && (
+          <Link to="#">
+            <button>Sign Up</button>
+          </Link>
         )}
+
+        {authState.isAuthenticated && <button onClick={logout}>Logout</button>}
       </div>
     </nav>
   );

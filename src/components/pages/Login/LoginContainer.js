@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
-import OktaSignIn from '@okta/okta-signin-widget';
+import { useOktaAuth } from '@okta/okta-react';
+import * as OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
 import { config } from '../../../utils/oktaConfig';
 
 const LoginContainer = () => {
+  const { authService } = useOktaAuth();
+
   useEffect(() => {
     const { pkce, issuer, clientId, redirectUri, scopes } = config;
     // destructure your config so that you can pass it into the required fields in your widget.
@@ -43,11 +46,21 @@ const LoginContainer = () => {
       },
       err => {
         throw err;
+      },
+      ({ tokens }) => {
+        // Add tokens to storage
+        const tokenManager = authService.getTokenManager();
+        tokenManager.add('idToken', tokens.idToken);
+        tokenManager.add('accessToken', tokens.accessToken);
+
+        // Return to the original URL (if auth was initiated from a secure route), falls back to the origin
+        const fromUri = authService.getFromUri();
+        window.location.assign(fromUri);
       }
     );
 
     return () => widget.remove();
-  }, []);
+  }, [authService]);
 
   return <div id="sign-in-widget" />;
 };
