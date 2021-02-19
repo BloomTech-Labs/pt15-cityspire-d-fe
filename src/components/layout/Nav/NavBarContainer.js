@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
-import RenderNavbar from './RenderNavBar';
+import RenderNavbar from './RenderNavbar';
 import './NavbarContainer.css';
 
 function Navbar() {
   const { authState, authService } = useOktaAuth();
-  console.log('useOktaAuth', useOktaAuth);
+  const [userInfo, setUserInfo] = useState(null);
+
+  useEffect(() => {
+    if (!authState.isAuthenticated) {
+      setUserInfo(null);
+    } else {
+      authService.getUser().then(info => {
+        setUserInfo(info);
+      });
+    }
+  }, [authState, authService]);
 
   return (
     <>
       <RenderNavbar
-        // userInfo={userInfo}
+        userInfo={userInfo}
         authService={authService}
         authState={authState}
       />
-      {/* {authState.isAuthenticated && userInfo && (
-        <RenderNavBar userInfo={userInfo} authService={authService} />
-      )} */}
     </>
   );
 }

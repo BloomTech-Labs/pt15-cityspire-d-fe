@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import citySpire from '../../../images/cityspire.svg';
 
 function RenderNavBar(props) {
-  console.log(props);
   const { authService, authState } = props;
+
   return (
     <nav>
       <Link to="/">
