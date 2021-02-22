@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 #root {
   margin-top: 80px;
   margin-bottom: -80px;
 }
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5rem;
+}
+
 a {
   text-decoration: none;
   font-family: Arial;
