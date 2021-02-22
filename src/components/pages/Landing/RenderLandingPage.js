@@ -11,7 +11,7 @@ import './RenderLandingPage.css';
 function RenderLandingPage() {
   return (
     <>
-      <div className="search-city-container">
+      <section className="hero-img">
         <div className="search-city-bg">
           <h1>Welcome To CitySpire</h1>
           <Link to="/map">
@@ -26,8 +26,8 @@ function RenderLandingPage() {
             </div>
           </Link>
         </div>
-      </div>
-      <p>
+      </section>
+      <section className="hero-container">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium,
         veniam corrupti ratione in autem quos nihil, libero tenetur laudantium
         rem incidunt sed aliquid, perferendis molestiae facilis minus aliquam
@@ -83,7 +83,7 @@ function RenderLandingPage() {
         dolorem laboriosam et officiis consequuntur odio odit, possimus facilis
         recusandae. Facilis tenetur ab, aspernatur a esse amet doloremque qui
         laudantium, minus quis voluptatibus et.
-      </p>
+      </section>
     </>
   );
 }
