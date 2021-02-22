@@ -1,7 +1,10 @@
-/* .favorites {
+.favorite {
+    border: 1px solid red;
     margin-left: 15px;
-    width: 300px;
-} */
+    width: 800px;
+    display: flex;
+    flex-flow: column wrap;
+}
 
 .cities {
     width: 280px;
@@ -12,6 +15,8 @@
 
 .data {
     border: 1px solid blue;
-    margin-left: 350px;
+    /* margin-left: 350px; */
     width: 300px;
+    margin-top: -70px;
+    margin-left: 350px;
 }

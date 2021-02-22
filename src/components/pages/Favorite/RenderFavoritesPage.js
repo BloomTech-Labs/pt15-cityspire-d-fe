@@ -50,7 +50,7 @@ function RenderFavoritesPage() {
   }, []);
 
   return (
-    <div className="favorites">
+    <div className="favorite">
       <p>hover see city data</p>
       <p>click go back to map</p>
       {favorite.map(userLoc => (
