@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
 import RenderNavbar from './RenderNavbar';
+import { checkAuthentication } from '../../common';
 
 import './NavbarContainer.css';
-import { checkAuthentication } from '../../common';
 
 function Navbar() {
   const { authState, authService } = useOktaAuth();
