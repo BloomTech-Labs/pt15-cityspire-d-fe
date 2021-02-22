@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 import citySpire from '../../../images/cityspire.svg';
 
-function RenderNavBar(props) {
-  const { authService, authState } = props;
+function RenderNavBar({ authService, authState, userInfo }) {
   const logout = async () => authService.logout();
 
   return (
@@ -19,13 +18,14 @@ function RenderNavBar(props) {
             <button>login</button>
           </Link>
         )}
-
         {!authState.isPending && !authState.isAuthenticated && (
           <Link to="#">
             <button>Sign Up</button>
           </Link>
         )}
 
+        {authState.isAuthenticated &&
+          (userInfo ? <span>{userInfo.name}</span> : '')}
         {authState.isAuthenticated && <button onClick={logout}>Logout</button>}
       </div>
     </nav>

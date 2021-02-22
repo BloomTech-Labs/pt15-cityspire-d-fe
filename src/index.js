@@ -49,9 +49,8 @@ function App() {
       <Navbar />
       <Switch>
         <Route path="/" exact component={LandingPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/implicit/callback" component={LoginCallback} />
-        <Route path="/map" component={Mapbox} />
+        <Route path="/login" exact component={LoginPage} />
+        <Route path="/map" exact component={Mapbox} />
 
         <SecureRoute
           path="/home"
@@ -60,6 +59,8 @@ function App() {
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
+
+        <Route path="/implicit/callback" component={LoginCallback} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
