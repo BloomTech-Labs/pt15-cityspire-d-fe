@@ -40,3 +40,8 @@ nav button:hover {
   transition: all 0.4s ease 0s;
   cursor: pointer;
 }
+
+.user-pic {
+  border: 1px solid #000;
+  border-radius: 25px;
+}
