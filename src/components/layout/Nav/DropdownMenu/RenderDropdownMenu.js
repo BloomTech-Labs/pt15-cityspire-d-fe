@@ -5,6 +5,7 @@ import {
   faHeart,
   faSignOutAlt,
   faUserCircle,
+  faSearchLocation,
 } from '@fortawesome/free-solid-svg-icons';
 
 function RenderDropdownMenu({
@@ -28,6 +29,12 @@ function RenderDropdownMenu({
             className={`menu ${isActive ? 'active' : 'inactive'}`}
           >
             <ul>
+              <li>
+                <Link to="/map" onClick={activeClick}>
+                  <FontAwesomeIcon icon={faSearchLocation} />
+                  &nbsp;&nbsp; Search City
+                </Link>
+              </li>
               <li>
                 <Link to="/home" onClick={activeClick}>
                   <FontAwesomeIcon icon={faUserCircle} />
