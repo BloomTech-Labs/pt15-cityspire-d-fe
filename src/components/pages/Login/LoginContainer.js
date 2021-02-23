@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import * as OktaSignIn from '@okta/okta-signin-widget';
-import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
 import { config } from '../../../utils/oktaConfig';
+import citySpire from '../../../images/cityspire.svg';
+
+import './Login.css';
+import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
 const LoginContainer = () => {
   useEffect(() => {
@@ -17,11 +20,11 @@ const LoginContainer = () => {
       },
       features: { registration: false },
       // turning this feature on allows your widget to use Okta for user registration
-      logo: 'path-to-your-logo',
+      logo: citySpire,
       // add your custom logo to your signing/register widget here.
       i18n: {
         en: {
-          'primaryauth.title': 'Welcome to Labs Basic SPA Please sign in',
+          'primaryauth.title': 'Welcome to CitySpire, Please sign in',
           // change title for your app
         },
       },
@@ -49,7 +52,7 @@ const LoginContainer = () => {
     return () => widget.remove();
   }, []);
 
-  return <div id="sign-in-widget" />;
+  return <div id="sign-in-widget" className="sign-in-widget" />;
 };
 
 export default LoginContainer;
