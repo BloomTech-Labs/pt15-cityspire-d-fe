@@ -8,7 +8,6 @@ function CityScr() {
   const [cityScr, setCityScr] = useState([]);
   // const [favorites, setFavorites] = useState([]);
   const location = useContext(LocationContext);
-  console.log('aw: CityScr.js: locationContext: ', location);
 
   useEffect(() => {
     axios
@@ -18,7 +17,6 @@ function CityScr() {
       )
       .then(res => {
         setCityScr(res.data);
-        console.log('aw: CityScr.js: .get: setCityScr: ', res.data);
       })
       .catch(err => {
         console.log(
@@ -33,19 +31,20 @@ function CityScr() {
   const favorite = e => {
     e.preventDefault();
     console.log('aw: CityScr.js: .put: Test', location);
-    // axios
-    //   .post(``)
-    //   .then(res => {
-    //     setFavorites(res.data)
-    //     console.log('aw: CityScr.js: .put: favorite: ', res.data)
-    //   })
-    //   .catch(err => {
-    //     console.log(
-    //       'aw: CityScr.js: .put: favorite: ',
-    //       err.message,
-    //       err.response
-    //     );
-    //   })
+    /* Need to get the .post from backend
+    axios
+      .post(`https://cityspire-d-be.herokuapp.com/userlocations/${userInfo}`)
+      .then(res => {
+        setFavorites(res.data)
+        console.log('aw: CityScr.js: .put: favorite: ', res.data)
+      })
+      .catch(err => {
+        console.log(
+          'aw: CityScr.js: .put: favorite: ',
+          err.message,
+          err.response
+        );
+      })*/
   };
 
   return (

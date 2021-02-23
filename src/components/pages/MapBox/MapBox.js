@@ -11,7 +11,6 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 function MapBox() {
   const mapContainerRef = useRef(null);
   const [location, setLocation] = useState('');
-  console.log('location', location);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
