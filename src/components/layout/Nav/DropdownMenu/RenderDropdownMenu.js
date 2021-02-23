@@ -30,13 +30,13 @@ function RenderDropdownMenu({
           >
             <ul>
               <li>
-                <Link to="#">
+                <Link to="/home" onClick={activeClick}>
                   <FontAwesomeIcon icon={faUserCircle} />
                   &nbsp;&nbsp; Profile
                 </Link>
               </li>
               <li>
-                <Link to="#">
+                <Link to="/favorites" onClick={activeClick}>
                   <FontAwesomeIcon icon={faHeart} />
                   &nbsp;&nbsp; Favorites
                 </Link>
