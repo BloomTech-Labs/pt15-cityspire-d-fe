@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
 import RenderNavbar from './RenderNavbar';
@@ -12,12 +12,13 @@ function Navbar() {
   const [userInfo, setUserInfo] = useState(null);
   const [userPic, setUserPic] = useState('');
 
-  checkAuthentication(authState, authService, userInfo, setUserInfo);
-
-  userAvatar().then(res => {
-    const pic = res.results[0].picture.thumbnail;
-    setUserPic(pic);
-  });
+  useEffect(() => {
+    checkAuthentication(authState, authService, userInfo, setUserInfo);
+    userAvatar().then(res => {
+      const pic = res.results[0].picture.thumbnail;
+      setUserPic(pic);
+    });
+  }, [authState, authService, userInfo, setUserInfo]);
 
   return (
     <div>

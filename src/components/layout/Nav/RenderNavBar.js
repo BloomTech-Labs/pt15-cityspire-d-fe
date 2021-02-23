@@ -5,6 +5,7 @@ import citySpire from '../../../images/cityspire.svg';
 
 function RenderNavBar({ authService, authState, userInfo, userPic }) {
   const logout = async () => authService.logout();
+  console.log(userInfo);
 
   return (
     <nav>
@@ -32,7 +33,7 @@ function RenderNavBar({ authService, authState, userInfo, userPic }) {
           ) : (
             ''
           ))}
-        {/* {authState.isAuthenticated && <button onClick={logout}>Logout</button>} */}
+        {authState.isAuthenticated && <button onClick={logout}>Logout</button>}
       </div>
     </nav>
   );

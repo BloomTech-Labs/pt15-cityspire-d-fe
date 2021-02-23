@@ -10,5 +10,7 @@ export default async function checkAuthentication(
       const info = await authService.getUser();
       setUserInfo(info);
     }
+  } else {
+    return setUserInfo(null);
   }
 }
