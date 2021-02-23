@@ -11,7 +11,7 @@ function RenderNavBar({ authState, userInfo, userPic, logout }) {
         <img src={citySpire} alt="CitySpire" />
       </Link>
 
-      <div id="button-container" className="button-container">
+      <div className="button-container">
         {!authState.isPending && !authState.isAuthenticated && (
           <Link to="/login">
             <button>login</button>

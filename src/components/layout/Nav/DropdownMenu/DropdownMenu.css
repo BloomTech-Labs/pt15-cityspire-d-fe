@@ -2,16 +2,16 @@
   position: relative;
 }
 .menu {
-  background: #ffffff;
+  /* background: #ffffff; */
   border-radius: 8px;
   position: absolute;
-  top: 60px;
+  top: 3.75rem;
   right: 0;
-  width: 300px;
+  width: 18.75rem;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20px);
+  transform: translateY(-1.25rem);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
 }
 
@@ -19,6 +19,7 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  background: #fafafa;
 }
 
 .menu ul {
@@ -34,12 +35,11 @@
 .menu li a {
   text-decoration: none;
   color: #333333;
-  padding: 15px 20px;
+  padding: 0.9375rem 1.25rem;
   display: block;
 }
 
 .menu-trigger {
-  background: #ffffff;
   border-radius: 90px;
   cursor: pointer;
   display: flex;
@@ -59,10 +59,10 @@
 .menu-trigger span {
   font-weight: 700;
   vertical-align: middle;
-  font-size: 14px;
-  margin: 0 10px;
+  font-size: 0.875rem;
+  margin: 0 0.625rem;
 }
 
 .menu-trigger img {
-  border-radius: 90px;
+  border-radius: 5.625rem;
 }
