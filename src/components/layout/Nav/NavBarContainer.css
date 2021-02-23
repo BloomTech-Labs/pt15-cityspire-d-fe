@@ -14,7 +14,7 @@ nav {
 
 .button-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 14rem;
   margin-right: 1rem;
@@ -33,12 +33,20 @@ nav button {
   text-align: center;
 }
 
+nav button:nth-child(1) {
+  margin-right: 25px;
+}
+
 nav button:hover {
   color: #ffffff;
   background: #a1c503;
   border-color: #a1c503;
   transition: all 0.4s ease 0s;
   cursor: pointer;
+}
+
+.logo {
+  margin-left: 25px;
 }
 
 .user-pic {
