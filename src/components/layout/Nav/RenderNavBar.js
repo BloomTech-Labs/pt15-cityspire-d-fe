@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import citySpire from '../../../images/cityspire.svg';
+import DropdownMenu from './DropdownMenu/DropdownMenu';
 
 function RenderNavBar({ authState, userInfo, userPic, logout }) {
   return (
@@ -22,15 +23,22 @@ function RenderNavBar({ authState, userInfo, userPic, logout }) {
           </Link>
         )}
 
-        {authState.isAuthenticated &&
+        <DropdownMenu
+          authState={authState}
+          userInfo={userInfo}
+          userPic={userPic}
+          logout={logout}
+        />
+
+        {/* {authState.isAuthenticated &&
           (userInfo ? <span>{userInfo.name}</span> : '')}
         {authState.isAuthenticated &&
           (userInfo ? (
             <img src={userPic} alt="user pic" className="user-pic" />
           ) : (
             ''
-          ))}
-        {authState.isAuthenticated && <button onClick={logout}>Logout</button>}
+          ))} */}
+        {/* {authState.isAuthenticated && <button onClick={logout}>Logout</button>} */}
       </div>
     </nav>
   );
