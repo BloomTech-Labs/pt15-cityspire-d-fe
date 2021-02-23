@@ -34,6 +34,10 @@
   border-bottom: 1px solid #dddddd;
 }
 
+.menu li:last-child {
+  border: none;
+}
+
 .menu li:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }

@@ -2,6 +2,13 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDetectOutsideClick } from '../../../common';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faHeart,
+  faSignOutAlt,
+  faUserCircle,
+} from '@fortawesome/free-solid-svg-icons';
+
 import './DropdownMenu.css';
 
 export default function DropdownMenu({ authState, userInfo, userPic, logout }) {
@@ -24,13 +31,22 @@ export default function DropdownMenu({ authState, userInfo, userPic, logout }) {
           >
             <ul>
               <li>
-                <Link to="#">Profile</Link>
+                <Link to="#">
+                  <FontAwesomeIcon icon={faUserCircle} />
+                  &nbsp;&nbsp; Profile
+                </Link>
               </li>
               <li>
-                <Link to="#">Favorites</Link>
+                <Link to="#">
+                  <FontAwesomeIcon icon={faHeart} />
+                  &nbsp;&nbsp; Favorites
+                </Link>
               </li>
               <li>
-                <Link onClick={logout}>Logout</Link>
+                <Link onClick={logout}>
+                  <FontAwesomeIcon icon={faSignOutAlt} />
+                  &nbsp;&nbsp; Logout
+                </Link>
               </li>
             </ul>
           </div>
