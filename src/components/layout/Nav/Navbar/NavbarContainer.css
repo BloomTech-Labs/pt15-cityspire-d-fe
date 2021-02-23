@@ -16,8 +16,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 14rem;
-  margin-right: 1rem;
   text-transform: uppercase;
 }
 
@@ -27,6 +25,12 @@ nav button:nth-child(1) {
 
 .logo {
   margin-left: 25px;
+  width: 20vw;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
 }
 
 .user-pic {

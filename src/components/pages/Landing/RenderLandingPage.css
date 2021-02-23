@@ -34,16 +34,20 @@
 }
 
 .search-city-btn-container {
-  display: flex;
   position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
   align-content: center;
   justify-content: center;
+  bottom: 20%;
+  left: 50%;
+  height: 1.875rem;
+  transform: translateX(-50%);
 }
 
 .fa-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #d3ff00c2;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -51,9 +55,6 @@
 }
 
 .fa-icon {
-  height: 100%;
-  width: 100%;
-  font-size: 2rem;
   color: #008000;
 }
 

@@ -6,6 +6,11 @@
   overflow: hidden;
 }
 
+.map-container button {
+  padding: 0;
+  border: none;
+}
+
 .geocoder {
   position: fixed;
   z-index: 2;

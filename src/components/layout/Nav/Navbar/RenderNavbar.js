@@ -7,8 +7,10 @@ import { DropdownMenu } from '../../Nav';
 function RenderNavBar({ authState, userInfo, userPic, logout }) {
   return (
     <nav>
-      <Link to="/" className="logo">
-        <img src={citySpire} alt="CitySpire" />
+      <Link to="/">
+        <div className="logo">
+          <img src={citySpire} alt="CitySpire" />
+        </div>
       </Link>
 
       <div className="button-container">
