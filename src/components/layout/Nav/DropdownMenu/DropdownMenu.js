@@ -18,7 +18,7 @@ export default function DropdownMenu({ authState, userInfo, userPic, logout }) {
 
             <img src={userPic} alt="user pic" className="user-pic" />
           </button>
-          <nav
+          <div
             ref={dropdownRef}
             className={`menu ${isActive ? 'active' : 'inactive'}`}
           >
@@ -33,7 +33,7 @@ export default function DropdownMenu({ authState, userInfo, userPic, logout }) {
                 <Link onClick={logout}>Logout</Link>
               </li>
             </ul>
-          </nav>
+          </div>
         </div>
       ) : (
         ''

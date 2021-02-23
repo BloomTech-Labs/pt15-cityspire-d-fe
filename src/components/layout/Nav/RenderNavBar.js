@@ -29,16 +29,6 @@ function RenderNavBar({ authState, userInfo, userPic, logout }) {
           userPic={userPic}
           logout={logout}
         />
-
-        {/* {authState.isAuthenticated &&
-          (userInfo ? <span>{userInfo.name}</span> : '')}
-        {authState.isAuthenticated &&
-          (userInfo ? (
-            <img src={userPic} alt="user pic" className="user-pic" />
-          ) : (
-            ''
-          ))} */}
-        {/* {authState.isAuthenticated && <button onClick={logout}>Logout</button>} */}
       </div>
     </nav>
   );
