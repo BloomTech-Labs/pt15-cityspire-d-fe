@@ -21,7 +21,6 @@ function RenderDropdownMenu({
         <div className="menu-container">
           <button onClick={activeClick} className="menu-trigger">
             <span>{userInfo.name}</span>
-
             <img src={userPic} alt="user pic" className="user-pic" />
           </button>
           <div
