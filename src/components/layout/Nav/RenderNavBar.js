@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 
 import citySpire from '../../../images/cityspire.svg';
 
-function RenderNavBar({ authService, authState, userInfo, userPic }) {
-  const logout = async () => authService.logout();
-  console.log(userInfo);
-
+function RenderNavBar({ authState, userInfo, userPic, logout }) {
   return (
     <nav>
       <Link to="/">

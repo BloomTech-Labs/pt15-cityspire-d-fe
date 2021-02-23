@@ -12,6 +12,8 @@ function Navbar() {
   const [userInfo, setUserInfo] = useState(null);
   const [userPic, setUserPic] = useState('');
 
+  const logout = async () => authService.logout();
+
   useEffect(() => {
     checkAuthentication(authState, authService, userInfo, setUserInfo);
     userAvatar().then(res => {
@@ -24,9 +26,9 @@ function Navbar() {
     <div>
       <RenderNavbar
         userInfo={userInfo}
-        authService={authService}
         authState={authState}
         userPic={userPic}
+        logout={logout}
       />
     </div>
   );
