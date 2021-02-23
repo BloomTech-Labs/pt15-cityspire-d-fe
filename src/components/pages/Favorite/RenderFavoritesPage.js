@@ -1,24 +1,38 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Favorites.css';
+import { useOktaAuth } from '@okta/okta-react';
 
 function RenderFavoritesPage() {
   const [favorite, setFavorite] = useState([]);
   const [userId, setUserId] = useState([]);
   const [cityScr, setCityScr] = useState([]);
   const [isShown, setIsShown] = useState(false);
+  const { authState, authService } = useOktaAuth();
+  const [userInfo, setUserInfo] = useState(null);
 
-  // console.log('aw: find user: ');
+  useEffect(() => {
+    if (!authState.isAuthenticated) {
+      // When user isn't authenticated, forget any user info
+      setUserInfo(null);
+    } else {
+      authService.getUser().then(info => {
+        setUserInfo(info);
+      });
+    }
+  }, [authState, authService]);
+
+  console.log('aw: userInfo: ', userInfo);
 
   useEffect(() => {
     axios // get users favorite locations
-      // .get(`https://cityspire-d-be.herokuapp.com/userlocations/${userId}`)
+      .get(`https://cityspire-d-be.herokuapp.com/userlocations/${userInfo}`)
       // llama002
       // .get(`https://cityspire-d-be.herokuapp.com/userlocations/00ultwew80Onb2vOT4x6`)
       // llama001
-      .get(
-        `https://cityspire-d-be.herokuapp.com/userlocations/00ulthapbErVUwVJy4x6`
-      )
+      // .get(
+      //     `https://cityspire-d-be.herokuapp.com/userlocations/00ulthapbErVUwVJy4x6`
+      // )
       .then(res => {
         setFavorite(res.data);
         console.log(
@@ -37,7 +51,7 @@ function RenderFavoritesPage() {
       .get(`https://cityspire-d-be.herokuapp.com/locations`)
       .then(res => {
         setCityScr(res.data);
-        console.log('aw: CityScr.js: .get: setCityScr: ', res.data);
+        // console.log('aw: CityScr.js: .get: setCityScr: ', res.data);
       })
       .catch(err => {
         console.log(
@@ -51,17 +65,15 @@ function RenderFavoritesPage() {
 
   return (
     <div className="favorite">
-      <p>hover see city data</p>
-      <p>click go back to map</p>
       {favorite.map(userLoc => (
         <div key={userLoc.id}>
-          <button
+          <h3
             className="cities"
             onMouseEnter={() => setIsShown(true)}
             onMouseLeave={() => setIsShown(false)}
           >
             {userLoc.name}
-          </button>
+          </h3>
           {isShown && (
             <div className="data">
               {cityScr.map(cityScrs => (
