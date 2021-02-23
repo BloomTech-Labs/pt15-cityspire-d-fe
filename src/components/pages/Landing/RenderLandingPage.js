@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-import { Button } from '../../common';
-
 import './RenderLandingPage.css';
 
 function RenderLandingPage() {
@@ -19,10 +17,7 @@ function RenderLandingPage() {
               <span className="fa-icon-container">
                 <FontAwesomeIcon className="fa-icon" icon={faSearchLocation} />
               </span>
-              <Button
-                classType="search-city-btn"
-                buttonText="Click HERE to Search for a City..."
-              ></Button>
+              <button className="search-city-btn">Search for City</button>
             </div>
           </Link>
         </div>

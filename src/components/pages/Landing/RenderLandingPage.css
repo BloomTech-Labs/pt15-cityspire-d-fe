@@ -42,13 +42,7 @@
   justify-content: center;
 }
 
-.search-city-btn-container:hover {
-  opacity: 0.75;
-}
-
 .fa-icon-container {
-  border: 1px solid black;
-  border-right: 0;
   background: #d3ff00c2;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -61,14 +55,11 @@
   font-size: 2rem;
   color: #008000;
 }
+
 .search-city-btn {
   width: 30vw;
-  background: #fafafa;
-  color: black;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0.625rem 2rem;
-  border: 1px solid black;
+  padding: 0 2%;
+  border: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   cursor: pointer;
