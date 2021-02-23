@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
 import RenderNavbar from './RenderNavbar';
-import { checkAuthentication } from '../../common';
-import { userAvatar } from '../../../api';
+import { checkAuthentication } from '../../../common';
+import { userAvatar } from '../../../../api';
 
 import './NavbarContainer.css';
 
-function Navbar() {
+export default function NavbarContainer() {
   const { authState, authService } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
   const [userPic, setUserPic] = useState('');
@@ -33,5 +33,3 @@ function Navbar() {
     </div>
   );
 }
-
-export default Navbar;

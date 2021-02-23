@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import citySpire from '../../../images/cityspire.svg';
-import DropdownMenu from './DropdownMenu/DropdownMenu';
+import citySpire from '../../../../images/cityspire.svg';
+import { DropdownMenu } from '../../Nav';
 
 function RenderNavBar({ authState, userInfo, userPic, logout }) {
   return (

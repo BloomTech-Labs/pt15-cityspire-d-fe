@@ -1,7 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDetectOutsideClick } from '../../../common';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHeart,
@@ -9,18 +7,19 @@ import {
   faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
-import './DropdownMenu.css';
-
-export default function DropdownMenu({ authState, userInfo, userPic, logout }) {
-  const dropdownRef = useRef(null);
-  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
-  const onClick = () => setIsActive(!isActive);
-
+function RenderDropdownMenu({
+  userInfo,
+  userPic,
+  logout,
+  activeClick,
+  isActive,
+  dropdownRef,
+}) {
   return (
     <>
       {userInfo ? (
         <div className="menu-container">
-          <button onClick={onClick} className="menu-trigger">
+          <button onClick={activeClick} className="menu-trigger">
             <span>{userInfo.name}</span>
 
             <img src={userPic} alt="user pic" className="user-pic" />
@@ -57,3 +56,5 @@ export default function DropdownMenu({ authState, userInfo, userPic, logout }) {
     </>
   );
 }
+
+export default RenderDropdownMenu;
