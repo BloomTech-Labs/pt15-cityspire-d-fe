@@ -11,10 +11,7 @@ function CityScr() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://cityspire-d-be.herokuapp.com/locations
-      `
-      )
+      .get(`https://cityspire-d-be.herokuapp.com/locations`)
       .then(res => {
         setCityScr(res.data);
       })
