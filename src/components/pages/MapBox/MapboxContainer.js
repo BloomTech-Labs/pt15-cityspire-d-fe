@@ -2,13 +2,16 @@ import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import './MapBox.css';
+
+import RenderMapbox from './RenderMapbox';
+import { LocationContext } from '../../../state';
+
+import './Mapbox.css';
 import LivabilityLandingPage from '../Livability/LivabilityLandingPage';
-import { LocationContext } from '../context/Locationcontext';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
-function MapBox() {
+function MapboxContainer() {
   const mapContainerRef = useRef(null);
   const [location, setLocation] = useState('');
 
@@ -29,7 +32,6 @@ function MapBox() {
     });
 
     geocoder.on('result', function(result) {
-      console.log(result);
       setLocation(result.result.text);
     });
 
@@ -42,11 +44,10 @@ function MapBox() {
   return (
     <>
       <LocationContext.Provider value={location}>
-        <div id="geocoder" className="geocoder"></div>
-        <div className="map-container" ref={mapContainerRef} />
+        <RenderMapbox mapContainerRef={mapContainerRef} />
         <LivabilityLandingPage />
       </LocationContext.Provider>
     </>
   );
 }
-export default MapBox;
+export default MapboxContainer;

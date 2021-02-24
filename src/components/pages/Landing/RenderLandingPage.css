@@ -1,11 +1,28 @@
-.search-city-container {
+.hero-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 30rem;
   background-image: url('../../../images/city.jpg');
   background-size: cover;
   background-size: auto;
+}
+
+.hero-img h1 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 4.6875rem;
+}
+
+.hero-container {
+  display: flex;
+  max-width: 1200px;
+  min-width: 300px;
+  margin: 3% auto;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
 .search-city-bg {
@@ -13,33 +30,24 @@
   background: rgba(0, 0, 0, 0.75);
   height: 50%;
   width: 50%;
+  min-width: 31.25rem;
 }
 
 .search-city-btn-container {
-  display: flex;
   position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
   align-content: center;
   justify-content: center;
-}
-
-.search-city-btn-container:hover {
-  opacity: 0.75;
-}
-
-.search-city-container h1 {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 700;
-  text-align: center;
-  padding: 5% 0 0 5%;
+  bottom: 20%;
+  left: 50%;
+  height: 2.5rem;
+  transform: translateX(-50%);
 }
 
 .fa-icon-container {
-  border: 1px solid black;
-  border-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #d3ff00c2;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -47,19 +55,13 @@
 }
 
 .fa-icon {
-  height: 100%;
-  width: 100%;
-  font-size: 2rem;
   color: #008000;
 }
+
 .search-city-btn {
   width: 30vw;
-  background: #fafafa;
-  color: black;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0.625rem 2rem;
-  border: 1px solid black;
+  padding: 0 2%;
+  border: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   cursor: pointer;

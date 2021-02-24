@@ -4,14 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-import { Button } from '../../common';
-
 import './RenderLandingPage.css';
 
-function RenderLandingPage(props) {
+function RenderLandingPage() {
   return (
     <>
-      <div className="search-city-container">
+      <section className="hero-img">
         <div className="search-city-bg">
           <h1>Welcome To CitySpire</h1>
           <Link to="/map">
@@ -19,15 +17,12 @@ function RenderLandingPage(props) {
               <span className="fa-icon-container">
                 <FontAwesomeIcon className="fa-icon" icon={faSearchLocation} />
               </span>
-              <Button
-                classType="search-city-btn"
-                buttonText="Click HERE to Search for a City..."
-              ></Button>
+              <button className="search-city-btn">Search for City</button>
             </div>
           </Link>
         </div>
-      </div>
-      <p>
+      </section>
+      <section className="hero-container">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium,
         veniam corrupti ratione in autem quos nihil, libero tenetur laudantium
         rem incidunt sed aliquid, perferendis molestiae facilis minus aliquam
@@ -83,7 +78,7 @@ function RenderLandingPage(props) {
         dolorem laboriosam et officiis consequuntur odio odit, possimus facilis
         recusandae. Facilis tenetur ab, aspernatur a esse amet doloremque qui
         laudantium, minus quis voluptatibus et.
-      </p>
+      </section>
     </>
   );
 }

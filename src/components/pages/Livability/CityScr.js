@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect, useContext } from 'react';
 import './livabilityCSS.css';
-import { LocationContext } from '../context/Locationcontext.js';
+import { LocationContext } from '../../../state';
 import { FaHeart } from 'react-icons/fa';
 
 function CityScr() {

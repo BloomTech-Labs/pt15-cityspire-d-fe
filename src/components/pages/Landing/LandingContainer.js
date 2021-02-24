@@ -1,7 +1,7 @@
 import React from 'react';
 import RenderLandingPage from './RenderLandingPage';
 
-function LandingContainer({ LoadingComponent }) {
+function LandingContainer() {
   return (
     <>
       <RenderLandingPage />
