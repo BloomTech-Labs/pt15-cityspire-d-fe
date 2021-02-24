@@ -19,6 +19,7 @@ import { LandingPage } from './components/pages/Landing';
 import { Mapbox } from './components/pages/Mapbox';
 import { LoadingComponent } from './components/common';
 import { Navbar } from './components/layout/Nav';
+import FavoritesContainer from './components/pages/Favorite/FavoriteContainer.js';
 
 import './styles/index.css';
 const CALLBACK_PATH = '/implicit/callback';
@@ -51,6 +52,7 @@ function App() {
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
         <SecureRoute path="/example-list" component={ExampleListPage} />
+        <SecureRoute path="/favorites" component={FavoritesContainer} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
 

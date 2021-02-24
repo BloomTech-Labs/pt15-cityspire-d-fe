@@ -6,19 +6,18 @@ import { FaHeart } from 'react-icons/fa';
 
 function CityScr() {
   const [cityScr, setCityScr] = useState([]);
+  // const [favorites, setFavorites] = useState([]);
   const location = useContext(LocationContext);
-  console.log('aw: CityScr.js: locationContext: ', location);
 
   useEffect(() => {
     axios
       .get(`https://cityspire-d-be.herokuapp.com/locations`)
       .then(res => {
         setCityScr(res.data);
-        console.log('aw: CityScr.js: axios: city_scr: ', res.data);
       })
       .catch(err => {
         console.log(
-          'aw: CityScr.js: axios: city_scr: ',
+          'aw: CityScr.js: .get: city_scr: ',
           err.message,
           err.response
         );
@@ -26,8 +25,23 @@ function CityScr() {
       });
   }, []);
 
-  const favorite = () => {
-    axios.put(``).then(res => {});
+  const favorite = e => {
+    e.preventDefault();
+    console.log('aw: CityScr.js: .put: Test', location);
+    /* Need to get the .post from backend
+    axios
+      .post(`https://cityspire-d-be.herokuapp.com/userlocations/${userInfo}`)
+      .then(res => {
+        setFavorites(res.data)
+        console.log('aw: CityScr.js: .put: favorite: ', res.data)
+      })
+      .catch(err => {
+        console.log(
+          'aw: CityScr.js: .put: favorite: ',
+          err.message,
+          err.response
+        );
+      })*/
   };
 
   return (
@@ -38,7 +52,9 @@ function CityScr() {
         <div className="livabilityBox">
           <div className="mainScore">
             <h1>{location}</h1>
-            <FaHeart size="30px" color="red" onClick={favorite} />
+            <button className="button" onClick={favorite}>
+              <FaHeart size="30px" color="red" />
+            </button>
           </div>
           <div className="subScores">
             {cityScr.map(cityScrs => (

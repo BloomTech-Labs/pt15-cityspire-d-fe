@@ -7,6 +7,7 @@ import RenderMapbox from './RenderMapbox';
 import { LocationContext } from '../../../state';
 
 import './Mapbox.css';
+import LivabilityLandingPage from '../Livability/LivabilityLandingPage';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -44,6 +45,7 @@ function MapboxContainer() {
     <>
       <LocationContext.Provider value={location}>
         <RenderMapbox mapContainerRef={mapContainerRef} />
+        <LivabilityLandingPage />
       </LocationContext.Provider>
     </>
   );
