@@ -21,6 +21,7 @@ import { LoadingComponent } from './components/common';
 import { LandingPage } from './components/pages/Landing';
 import MapBox from './components/pages/MapBox/MapBox';
 import NavBar from '../src/components/pages/Nav/navBar';
+import FavoritesContainer from './components/pages/Favorite/FavoriteContainer.js';
 
 import './index.css';
 
@@ -58,6 +59,7 @@ function App() {
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
         <SecureRoute path="/example-list" component={ExampleListPage} />
+        <SecureRoute path="/favorites" component={FavoritesContainer} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
         <Route component={NotFoundPage} />

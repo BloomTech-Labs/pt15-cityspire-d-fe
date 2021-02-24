@@ -17,7 +17,7 @@ function NavBar(props) {
             <p>User</p>
           </div>
         </Link>
-        <Link to="/example-list" className="favorites">
+        <Link to="/favorites" className="favorites">
           <FaHeart size="30px" />
           <div className="heart">
             <p>Favorites</p>
