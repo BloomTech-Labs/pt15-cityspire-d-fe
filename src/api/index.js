@@ -2,6 +2,7 @@ import axios from 'axios';
 
 // we will define a bunch of API calls here.
 const apiUrl = `${process.env.REACT_APP_API_URI}/profiles`;
+const userPicUrl = `https://randomuser.me/api/`;
 
 const sleep = time =>
   new Promise(resolve => {
@@ -49,4 +50,12 @@ const getProfileData = authState => {
   }
 };
 
-export { sleep, getExampleData, getProfileData, getDSData };
+// get user profile picture
+// replace randomuser.me API with backend once working
+const userAvatar = async () => {
+  return axios
+    .get(`https://api.allorigins.win/raw?url=` + userPicUrl)
+    .then(res => res.data);
+};
+
+export { sleep, getExampleData, getProfileData, getDSData, userAvatar };

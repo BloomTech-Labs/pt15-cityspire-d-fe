@@ -6,13 +6,18 @@
   overflow: hidden;
 }
 
+.map-container button {
+  padding: 0;
+  border: none;
+}
+
 .geocoder {
   position: fixed;
   z-index: 2;
   width: 50%;
   left: 50%;
   margin-left: -25%;
-  top: 10px;
+  top: 20px;
 }
 .mapboxgl-ctrl-geocoder {
   min-width: 100%;

@@ -46,7 +46,7 @@ function RenderFavoritesPage() {
         );
         setCityScr(null);
       });
-  }, []);
+  }, [userInfo]);
 
   return (
     <div className="favorite">
